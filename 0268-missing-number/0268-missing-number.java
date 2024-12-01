@@ -1,5 +1,6 @@
 import java.util.Arrays;
 class Solution {
+    /** 
     public int missingNumber(int[] nums) {
         // 배열 정리 -> 없는거 찾기
         Map<Integer, Boolean> map = new HashMap<>();
@@ -18,4 +19,47 @@ class Solution {
         return -1;
         
     }
+
+*/
+    public int missingNumber(int[] nums) {
+        int length = nums.length;
+        int[] v = new int[length + 1];
+
+// 초기화
+        Arrays.fill(v, -1);
+
+        // v에 위치값넣기
+        for(int i = 0 ; i < length ; i ++) {
+            v[nums[i]] = nums[i];
+        }
+
+        // -1인 값 판별
+        for(int i = 0 ; i <= length ; i ++) {
+            if(v[i] == -1) return i;
+        }
+        return -1;
+
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
